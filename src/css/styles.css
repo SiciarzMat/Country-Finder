@@ -15,7 +15,7 @@ body {
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
+  width: 320px;
   margin-bottom: 16px;
 }
 
@@ -39,4 +39,23 @@ p {
   font-size: 22;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.country-info {
+  max-width: 320px;
+}
+.country-info_header {
+  display: flex;
+  align-items: center;
+}
+.country-info_header > h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.country-info_p {
+  font-size: 18;
+}
+
+.country-info_p > span {
+  font-weight: bold;
 }

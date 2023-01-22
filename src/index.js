@@ -1,12 +1,11 @@
 import './css/styles.css';
 import { fetchCountries } from './fetchCountries';
+import { countryInfo } from './fetchCountries';
+import { countryList } from './fetchCountries';
 import Notiflix from 'notiflix';
 
 const debounce = require('lodash.debounce');
 const input = document.querySelector('#search-box');
-const countryList = document.querySelector('.country-list');
-const countryInfo = document.querySelector('.country-info');
-
 const DEBOUNCE_DELAY = 300;
 
 input.addEventListener(
@@ -37,15 +36,21 @@ function mapCountries(countries) {
       }" width="35" height="35"><h1 class="country-info_name">${
         country.name.common
       }</h1></div>
-        <p class="country-info_p">Capital: ${country.capital}</p>
-        <p class="country-info_p">Population: ${country.population}</p>
-        <p class="country-info_p">Languages: ${Object.values(
+        <p class="country-info_p"><span>Capital:</span> ${country.capital}</p>
+        <p class="country-info_p"><span>Population:</span> ${
+          country.population
+        }</p>
+        <p class="country-info_p"><span>Languages:</span> ${Object.values(
           country.languages
         ).join(', ')}</p>`;
     });
     //   .join('');
     countryList.innerHTML = '';
     countryInfo.innerHTML = countryDetails;
+  } else if (countries.length === 0) {
+    Notiflix.Notify.failure("Please put country's name in English");
+    countryInfo.innerHTML = '';
+    countryList.innerHTML = '';
   } else {
     const markup = countries
       .map(country => {
