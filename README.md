@@ -1,7 +1,7 @@
 # Country Finder
 Website created with HTML5, CSS3 / SASS, JavaScript and API Rest Countries v2. 
 
-https://olgapikulska.github.io/Country-finder/
+https://siciarzmat.github.io/Country-Finder/
 
 ## Table of contents
 * [General info](#general-info)
